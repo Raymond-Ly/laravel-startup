@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
+    "name": "corg-api",
+    "version": "1.0.0",
+    "description": "CORG's API",
     "keywords": [
         "framework",
         "laravel"
