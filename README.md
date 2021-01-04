@@ -11,7 +11,7 @@
 1. Go into src: `cd src/`
 1. Install Dependencies: `composer i && npm i`
 1. Build: `docker-compose up`
-1. 🎉 You can access CORG API endpoints at http://localhost:8080/
+1. 🎉 You can access CORG API endpoints at http://local.casino.org:8080/
 
 ## Unit Tests
 
