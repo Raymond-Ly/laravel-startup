@@ -6,7 +6,9 @@ networks:
 
 services:
   nginx:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
     container_name: nginx
     ports:
       - "8080:80"
@@ -38,7 +40,7 @@ services:
   php:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: php.dockerfile
     container_name: php
     volumes:
       - ./src:/var/www/html:delegated

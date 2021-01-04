@@ -1,14 +1,13 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers;
+namespace Tests\Unit\Http\Controllers;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PageControllerTest extends TestCase
 {
     /** @test */
-    public function it_returns_200_success_if_url_query_string_is_found ()
+    public function its_show_method_returns_200_success_if_url_query_string_is_found()
     {
         $response = $this->get('/api/page?url=/gambling');
 
@@ -16,7 +15,7 @@ class PageControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_400_bad_request_if_url_query_string_is_not_provided ()
+    public function its_show_method_returns_400_bad_request_if_url_query_string_is_not_provided()
     {
         $response = $this->get('/api/page');
 
@@ -24,29 +23,11 @@ class PageControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_the_correct_json_structure_for_page_model ()
+    public function its_show_method_returns_the_correct_json_structure_for_page_response()
     {
         $this->get('/api/page?url=/gambling')->assertJsonStructure([
             'page',
             'globals'
-        ]);
-    }
-
-    /** @test */
-    public function it_returns_the_page_response_based_on_the_country_code_from_query_string_if_specified ()
-    {
-        $this->get('/api/page?url=/gambling&country=GB')->assertJson([
-            'globals' => [
-                'countryCode' => 'GB'
-            ]
-        ]);
-    }
-
-    /** @test */
-    public function it_appends_a_trailing_forward_slash_to_url_query_string ()
-    {
-        $this->get('/api/page?url=/gambling&country=GB')->assertJson([
-            'page' => '/gambling/'
         ]);
     }
 }
