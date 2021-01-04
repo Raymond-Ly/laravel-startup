@@ -1,8 +1,10 @@
 # CORG API
 
 Laravel Framework 8.18.1
+
 ## Getting Started
 
+1. Go into src: `cd src/`
 1. Install Dependencies: `composer i && npm i`
 1. Build: `docker-compose up`
 
