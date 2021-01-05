@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Models\Common;
-
 
 class GlobalsModel
 {
@@ -32,9 +30,9 @@ class GlobalsModel
         string $currentMonth,
         string $currentMonthNumber
     ) {
-        $this->countryCode = $countryCode;
-        $this->currentYear = $currentYear;
-        $this->currentMonth = $currentMonth;
+        $this->countryCode        = $countryCode;
+        $this->currentYear        = $currentYear;
+        $this->currentMonth       = $currentMonth;
         $this->currentMonthNumber = $currentMonthNumber;
     }
 }

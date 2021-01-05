@@ -17,21 +17,16 @@ class PageController extends Controller
 
     public function show(Request $request): JsonResponse
     {
-        if ($request->has('country')) {
-            $_GET['country'] = $request->get('country');
-        }
+        $country = $request->has('country') ? $request->get('country') : null;
+        $url     = $request->has('url') ? $request->get('url') : null;
 
-        if ($request->has('state')) {
-            $_GET['state'] = $request->get('state');
-        }
-
-        if ($request->get('url')) {
-            $url  = '/' . trim(parse_url($request->get('url'), PHP_URL_PATH), '/') . '/';
+        if ($url) {
+            $url  = '/' . trim(parse_url($url, PHP_URL_PATH), '/') . '/';
         } else {
             // TODO: Build standard error response methods
             return response()->json(['error' => 'Bad Request, url query string must be provided'], 400);
         }
 
-        return response()->json($this->pageModelManager->build($url, $request->get('country')), 200);
+        return response()->json($this->pageModelManager->build($url, $country), 200);
     }
 }

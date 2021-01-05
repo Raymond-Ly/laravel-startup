@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models\Page;
 
 use App\Models\Common\GlobalsModel;
@@ -21,7 +20,7 @@ class PageModel
         string $page,
         GlobalsModel $globals
     ) {
-        $this->page = $page;
+        $this->page    = $page;
         $this->globals = $globals;
     }
 }

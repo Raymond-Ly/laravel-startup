@@ -9,7 +9,7 @@ class PageModelManager
 {
     public function build(string $url, ?string $countryCode): PageModel
     {
-        $url  = '/' . trim(parse_url($url, PHP_URL_PATH), '/') . '/';
+        $url     = '/' . trim(parse_url($url, PHP_URL_PATH), '/') . '/';
         $globals = $this->buildGlobalModel($countryCode);
 
         return new PageModel($url, $globals);
