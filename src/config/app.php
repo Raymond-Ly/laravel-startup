@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://local.casino.org'),
+    'url' => env('APP_URL', 'http://localhost:8080'),
 
     'asset_url' => env('ASSET_URL', null),
 
